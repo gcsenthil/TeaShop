@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>பசுமை கூரை</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍵</text></svg>"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.5/dist/alpine.js"></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body class="min-h-screen bg-white-50 dark:bg-black dark:text-white">
+    <header class="sticky top-0 z-10 bg-pink-700 text-white p-4">
+      <section class="mx-auto max-w-6xl items-center justify-between p-4">
+        <h1 class="text-4xl text-center text-white font-medium">
+          <a href="index.html">🍵 பசுமை கூரை</a>
+        </h1>
+      </section>
+    </header>
+    <main class="mx-auto max-w-6xl">
+      <section
+        id="hero "
+        class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20 p-6"
+      >
+        <!-- Carousel container -->
+        <div class="carousel-container relative">
+          <!-- Progress bar -->
+          <div
+            class="absolute top-0 left-0 right-0 h-1 bg-white/10 rounded-full overflow-hidden z-20"
+          >
+            <div
+              class="progress-bar absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r from-violet-500 to-fuchsia-500"
+            ></div>
+          </div>
+
+          <!-- Navigation buttons -->
+          <button
+            class="nav-button absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center z-20 text-white touch-manipulation"
+            onclick="prevSlide()"
+            title="Previous slide"
+          >
+            <svg
+              class="w-5 h-5 sm:w-6 sm:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+
+          <button
+            class="nav-button absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center z-20 text-white touch-manipulation"
+            onclick="nextSlide()"
+            title="Next slide"
+          >
+            <svg
+              class="w-5 h-5 sm:w-6 sm:h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
+
+          <!-- Carousel track -->
+          <div
+            class="carousel-track relative h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden"
+          >
+            <!-- Carousel items -->
+            <div
+              class="carousel-item active absolute top-0 left-0 w-full h-full"
+            >
+              <div class="w-full h-full p-4 sm:p-8">
+                <div
+                  class="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden relative group"
+                >
+                  <img
+                    src="img/teashop2.jpg"
+                    alt="Geometric art installation"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br from-violet-500/40 to-purple-500/40 mix-blend-overlay"
+                  ></div>
+                  <div
+                    class="absolute inset-x-0 bottom-0 bg-pink-800 p-4 sm:p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+                  >
+                    <h3
+                      class="text-white text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3"
+                    >
+                      மன அழுத்தத்தை குறைக்கும்
+                    </h3>
+                    <p
+                      class="text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl"
+                    >
+                      தேயிலை உடலுக்கும் மனதுக்கும் இளமையாக உணர்வு தருவதுடன், மன
+                      அழுத்தத்தை குறைக்கும்.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item next absolute top-0 left-0 w-full h-full">
+              <div class="w-full h-full p-4 sm:p-8">
+                <div
+                  class="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden relative group"
+                >
+                  <img
+                    src="img/teashop3.jpg"
+                    alt="Futuristic tech setup"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br bg-pink-800 from-fuchsia-500/40 to-pink-500/40 mix-blend-overlay"
+                  ></div>
+                  <div
+                    class="absolute inset-x-0 bottom-0 p-4 sm:p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+                  >
+                    <h3
+                      class="text-white text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3"
+                    >
+                      ஆண்டிஓக்ஸிடன்டுகளுக்கு ஆதாரம்
+                    </h3>
+                    <p
+                      class="text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl"
+                    >
+                      தேயிலை உடலில் ஆன்டிஓக்ஸிடன்டுகளை வழங்கி, நலனை மேம்படுத்த
+                      உதவுகிறது.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="carousel-item hidden absolute top-0 left-0 w-full h-full"
+            >
+              <div class="w-full h-full p-4 sm:p-8">
+                <div
+                  class="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden relative group"
+                >
+                  <img
+                    src="img/teashop4.jpg"
+                    alt="Abstract digital art"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-br from-pink-500/40 to-rose-500/40 mix-blend-overlay"
+                  ></div>
+                  <div
+                    class="absolute inset-x-0 bg-pink-800 bottom-0 p-4 sm:p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+                  >
+                    <h3
+                      class="text-white text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3"
+                    >
+                      செரிமானத்தை மேம்படுத்தும்
+                    </h3>
+                    <p
+                      class="text-gray-200 text-sm sm:text-base md:text-lg max-w-2xl"
+                    >
+                      தேயிலை செரிமானத்தை மேம்படுத்தி, உடலை பசப்பாக்க மற்றும்
+                      எளிதாக இரத்தசோகையை தீர்க்க உதவுகிறது.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Indicators -->
+          <div
+            class="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex gap-1 sm:gap-2 z-20"
+          >
+            <button
+              class="w-8 sm:w-12 h-1 sm:h-1.5 rounded-full bg-white/40 hover:bg-white/60 transition-colors"
+              title="Go to slide 1"
+            ></button>
+            <button
+              class="w-8 sm:w-12 h-1 sm:h-1.5 rounded-full bg-white/20 hover:bg-white/60 transition-colors"
+              title="Go to slide 2"
+            ></button>
+            <button
+              class="w-8 sm:w-12 h-1 sm:h-1.5 rounded-full bg-white/20 hover:bg-white/60 transition-colors"
+              title="Go to slide 3"
+            ></button>
+          </div>
+        </div>
+      </section>
+      <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+      <section
+        id="hero"
+        class="my-12 widescreen:section-min-height tallscreen:section-min-height mb-12 flex scroll-mt-40 flex-col-reverse items-center justify-center gap-8 p-6 lg:flex-row"
+      >
+        <img
+          class="lg:w-1/2 hover:opacity-90 rounded-md"
+          src="./img/teagarden.jpg"
+          alt="Rocket Dab"
+        />
+        <article class="lg:w-1/2">
+          <h2
+            class="max-w-md text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-left sm:text-5xl"
+          >
+            நாங்கள் ஆர்வமாக அருந்தினால்,
+            <span class="text-pink-700 dark:text-indigo-300">
+              மனதைத் தொட்டு
+            </span>
+            தேயிலை பரிமாறுகிறோம்...
+          </h2>
+          <p
+            class="mt-4 max-w-md text-center text-2xl text-slate-700 dark:text-slate-400 sm:text-left"
+          >
+            எல்லா தருணத்திலும் சூழலை உற்சாகமுடன் நிரப்புகிறோம், சாதாரண
+            உரையாடலிலிருந்து ஆழமான சந்திப்புகளுக்குப் போய். என்றும் நினைவில்
+            இருக்கும் தேயிலை!
+          </p>
+          <p
+            class="mt-4 max-w-md text-center text-2xl text-slate-700 dark:text-slate-400 sm:text-left"
+          >
+            என்றும் நினைவில் இருக்கும் தேயிலை!
+          </p>
+        </article>
+      </section>
+
+      <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+      <section
+        id="benefits"
+        class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20 p-6"
+      >
+        <div class="text-center mb-10">
+          <h2 class="text-4xl tracking-tight font-bold text-primary-800">
+            தேநீர் ஆரோக்கிய நன்மைகளும்
+          </h2>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center justify-center">
+          <!-- can help image -->
+          <div class="mb-6 md:mb-0 ml-auto">
+            <img
+              class="w-full max-w-md mx-auto"
+              src="img/benefits.jpg"
+              alt="can_help_banner"
+            />
+          </div>
+          <!-- end can help image -->
+
+          <div
+            class="flex-1 flex flex-col lg:flex-row flex-wrap justify-center gap-4"
+          >
+            <div class="w-full lg:w-1/2 px-2">
+              <div
+                class="h-full py-4 px-6 border border-pink-500 border-t-0 border-l-0 rounded-br-xl"
+              >
+                <h3 class="text-2xl font-bold text-md mb-6">
+                  உடல் எடையை குறைக்க உதவும்
+                </h3>
+                <p class="text-sm">
+                  தேநீரில் உள்ள ஃபிளாவனாய்டுகள் (Catechin) கொழுப்பை குறைக்க
+                  உதவுவதுடன், கிரீன் டீ உடல் எடையை குறைக்க விரும்புவோருக்கு
+                  பரிந்துரைக்கப்படுகிறது.
+                </p>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 px-2">
+              <div
+                class="h-full py-4 px-6 border border-pink-500 border-t-0 border-l-0 rounded-br-xl"
+              >
+                <h3 class="text-2xl font-bold text-md mb-6">
+                  புற்றுநோய் வளர்ச்சியை கட்டுப்படுத்தும்
+                </h3>
+                <p class="text-sm">
+                  கிரீன் மற்றும் பிளேக் டீயில் உள்ள நுண்ணூட்டச்சத்துக்கள்,
+                  புற்றுநோய் செல்களின் வளர்ச்சியை கட்டுப்படுத்த உதவுகின்றன.
+                </p>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 px-2">
+              <div
+                class="h-full py-4 px-6 border border-pink-500 border-t-0 border-l-0 rounded-br-xl"
+              >
+                <h3 class="text-2xl font-bold text-md mb-6">
+                  மன அழுத்தத்தை குறைக்கும்
+                </h3>
+                <p class="text-sm">
+                  தேநீர், மன அழுத்தம், தலைவலி மற்றும் பதட்டத்தை குறைக்க
+                  உதவுவதுடன், மனதை அமைதிப்படுத்தும் அருமருந்தாக விளங்குகிறது.
+                </p>
+              </div>
+            </div>
+
+            <div class="w-full lg:w-1/2 px-2">
+              <div
+                class="h-full py-4 px-6 border border-pink-500 border-t-0 border-l-0 rounded-br-xl"
+              >
+                <h3 class="text-2xl font-bold text-md mb-6">
+                  வயிறு சார்ந்த பிரச்சனைகளை தீர்க்கும்
+                </h3>
+                <p class="text-sm">
+                  தேநீரில் உள்ள Tannin-கள், குடல் அழற்சி மற்றும் வயிறு சார்ந்த
+                  பிரச்சனைகளைக் குறைக்க உதவுகின்றன.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+      <section
+        id="contact"
+        class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-16 p-6"
+      >
+        <h2
+          class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl"
+        >
+          எங்களை தொடர்பு கொள்ளுங்கள்
+        </h2>
+        <form
+          action=""
+          class="items-left mx-auto flex max-w-4xl flex-col gap-4 text-2xl sm:text-3xl"
+        >
+          <label for="subject">பொருள்:</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            required
+            minlength="3"
+            maxlength="60"
+            placeholder="Your Subject"
+            class="w-full rounded-xl border border-solid border-slate-900 p-3 text-2xl text-black dark:border-none sm:text-3xl"
+          />
+          <label for="message">செய்தி:</label>
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Your Message"
+            required
+            class="w-full rounded-xl border border-solid border-slate-900 p-3 text-2xl text-black dark:border-none sm:text-3xl"
+          ></textarea>
+          <button
+            class="w-48 inline-block rounded-md border-transparent bg-rose-600 px-8 py-3 text-center font-medium text-white hover:bg-rose-700 dark:border-none"
+          >
+            அனுப்பு
+          </button>
+        </form>
+      </section>
+    </main>
+    <footer id="footer" class="bg-pink-700 text-xl text-white">
+      <section
+        class="mx-auto flex max-w-6xl flex-col p-4 sm:flex-row sm:justify-between"
+      >
+        <address>
+          <h2>பசுமை கூரை,</h2>
+          23 C, North Street<br />
+          Thuraiyur, Trichy 12345-5555<br />
+          Email:
+          <a href="mailto:inquiries@acmerockets.com">support@geniusnexa.com</a
+          ><br />
+          Phone: <a href="tel:+15555555555">+91 555 555 5555</a>
+        </address>
+
+        <div class="flex flex-col sm:gap-2">
+          <p class="text-right">Copyright &copy; <span id="year">2025</span></p>
+          <p class="text-right">All Rights Reserved</p>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>
